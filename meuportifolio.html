@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://almeida-cma.github.io/tema4/ -->
+<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio | Iniciante Frontend</title>
+    <style>
+        /* ============================================
+           ESTILOS PRINCIPAIS - PORTFÓLIO SIMPLES
+           ============================================
+           INSTRUÇÕES PARA PERSONALIZAÇÃO:
+           1. Altere as CORES nas variáveis abaixo (--cor-principal, etc.)
+           2. Substitua os textos pelos seus dados pessoais
+           3. Adicione sua foto na seção hero (já tem o espaço preparado)
+           4. Complete com seus projetos e redes sociais
+           ============================================ */
+
+        /* VARIÁVEIS DE COR - PERSONALIZE AQUI! */
+        :root {
+    --cor-principal: #c740f0;   /* Neon azul */
+    --cor-secundaria: #ff00ff;  /* Neon rosa */
+    --cor-fundo: #0a0a0a;       /* Preto quase total */
+    --cor-texto: #ffffff;       /* Branco */
+    --cor-texto-claro: #a1a1aa;
+    --cor-borda: #1f1f1f;
+}
+
+        /* RESET BÁSICO - remove margens e paddings padrão */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ESTILOS GLOBAIS */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        /* CONTAINER PRINCIPAL - centraliza o conteúdo */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========== CABEÇALHO ========== */
+        header {
+            background-color: var(--cor-fundo);
+            border-bottom: 1px solid var(--cor-borda);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+    color: var(--cor-principal);
+    text-shadow: 
+        0 0 5px var(--cor-principal),
+        0 0 10px var(--cor-principal),
+        0 0 20px var(--cor-principal);
+}
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--cor-texto);
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--cor-principal);
+        }
+
+        /* ========== SEÇÃO HERO ========== */
+        .hero h1 .destaque {
+    text-shadow: 
+        0 0 5px var(--cor-principal),
+        0 0 15px var(--cor-principal),
+        0 0 30px var(--cor-principal);
+}
+
+        /* Container para foto e texto */
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        /* ESTILO DA FOTO - ADAPTÁVEL A QUALQUER TAMANHO */
+        .foto-perfil {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--cor-principal);
+            box-shadow: var(--sombra);
+            transition: transform 0.3s ease;
+        }
+
+        .foto-perfil:hover {
+            transform: scale(1.05);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--cor-texto);
+        }
+
+        .hero .destaque {
+            color: var(--cor-principal);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--cor-texto-claro);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ========== SEÇÃO SOBRE ========== */
+        .sobre {
+            padding: 4rem 0;
+            background-color: #08090a;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--cor-texto);
+        }
+
+        .sobre-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* ========== SEÇÃO PROJETOS ========== */
+        .projetos {
+            padding: 4rem 0;
+        }
+
+        .projetos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .projeto-card {
+    border: 1px solid var(--cor-principal);
+    box-shadow: 
+        0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.projeto-card:hover {
+    box-shadow: 
+        0 0 20px var(--cor-principal),
+        0 0 40px rgba(0, 255, 255, 0.5);
+}
+
+        .projeto-card h3 {
+            margin-bottom: 1rem;
+            color: var(--cor-principal);
+        }
+
+        .projeto-card p {
+            color: var(--cor-texto-claro);
+            margin-bottom: 1rem;
+        }
+
+        .projeto-link {
+            color: var(--cor-principal);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* ========== SEÇÃO CONTATO ========== */
+        .contato {
+            padding: 4rem 0;
+            background-color: #09090a;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+    background-color: transparent;
+    border: 2px solid var(--cor-principal);
+    color: var(--cor-principal);
+    box-shadow: 
+        0 0 5px var(--cor-principal);
+}
+
+.social-btn:hover {
+    background-color: var(--cor-principal);
+    color: black;
+    box-shadow: 
+        0 0 20px var(--cor-principal),
+        0 0 40px var(--cor-principal);
+}
+
+        /* ========== RODAPÉ ========== */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid var(--cor-borda);
+            color: var(--cor-texto-claro);
+        }
+
+        /* ========== RESPONSIVIDADE ========== */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .projetos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .foto-perfil {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        ============================================
+        INSTRUÇÕES PARA PERSONALIZAÇÃO:
+        
+        1. SUBSTITUA os textos entre os marcadores "ALTERAR AQUI"
+        2. ADICIONE sua foto na tag <img> abaixo (descomente a linha)
+        3. COMPLETE com seus projetos e contatos
+        
+        DIVIRTA-SE PERSONALIZANDO! 🚀
+        ============================================
+    -->
+    
+    <header>
+        <div class="container">
+            <nav>
+                <!-- ALTERAR AQUI: Nome ou logo do portfólio -->
+                <div class="logo">Gustavo Sobrinho dos Santos</div>
+                
+                <ul class="nav-links">
+                    <li><a href="https://almeida-cma.github.io/tema4/#inicio">Início</a></li>
+                    <li><a href="https://almeida-cma.github.io/tema4/#sobre">Sobre</a></li>
+                    <li><a href="https://almeida-cma.github.io/tema4/#projetos">Projetos</a></li>
+                    <li><a href="https://almeida-cma.github.io/tema4/#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- SEÇÃO HERO (INÍCIO) COM ESPAÇO PARA FOTO -->
+        <section id="inicio" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <!-- 
+                        ESPAÇO PARA SUA FOTO!
+                        Descomente a linha abaixo e coloque o caminho da sua imagem
+                        A foto se ajustará automaticamente a qualquer tamanho!
+                        
+                        Exemplos de uso:
+                        - Para foto local: <img class="foto-perfil" src="minha-foto.jpg" alt="Minha foto">
+                        - Para foto da internet: <img class="foto-perfil" src="https://exemplo.com/foto.jpg" alt="Minha foto">
+                        - Para foto em pasta: <img class="foto-perfil" src="imagens/foto.jpg" alt="Minha foto">
+                    -->
+                    <!-- <img class="foto-perfil" src="sua-foto-aqui.jpg" alt="Minha foto de perfil"> -->
+                    
+                    <div>
+                        <h1>Olá, meu nome é <span class="destaque">Gustavo Sobrinho</span> 👾</h1>
+                        <p>Desenvolvedor Backend iniciante, se especializando criar experiências com dados!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO SOBRE -->
+        <section id="sobre" class="sobre">
+            <div class="container">
+                <h2 class="section-title">Sobre Mim</h2>
+                <div class="sobre-content">
+                    <!-- ALTERAR AQUI: Sua história, interesses e objetivos -->
+                    <p>Sou um desenvolvedor iniciante em backend, atualmente estudando HTML, CSS, Python e Lógica de Programação. 
+                    Adoro transformar ideias em código e criar interfaces bonitas e funcionais. 
+                    Estou sempre buscando aprender novas tecnologias e melhorar minhas habilidades.</p>
+                    <br>
+                    <p>🛡️ Objetivo: Me tornar um desenvolvedor full-stack e solucionar problemas com minhas habilidades.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO PROJETOS -->
+        <section id="projetos" class="projetos">
+            <div class="container">
+                <h2 class="section-title">Meus Projetos</h2>
+                <div class="projetos-grid">
+                    <!-- ALTERAR AQUI: Substitua pelos seus projetos reais -->
+                    
+                    <div class="projeto-card">
+                        <h3>Projeto 1</h3>
+                        <p>Esse projeto é uma site de compras do palmeiraas, nele foi usado as linguagens HTMl, CSS e JavaScript.</p>
+                        <a href=https://gustavosobrinho16.github.io/tema4/ class="projeto-link">Ver projeto →</a>
+                    </div>
+                    
+                    <div class="projeto-card">
+                        <h3>Projeto 2</h3>
+                        <p>Descrição do seu segundo projeto. Explique o problema que resolveu e como fez isso.</p>
+                        <a href="https://almeida-cma.github.io/tema4/#" class="projeto-link">Ver projeto →</a>
+                    </div>
+                    
+                    <div class="projeto-card">
+                        <h3>Projeto 3</h3>
+                        <p>Descrição do seu terceiro projeto. Destaque as principais funcionalidades e aprendizados.</p>
+                        <a href="https://almeida-cma.github.io/tema4/#" class="projeto-link">Ver projeto →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO CONTATO -->
+        <section id="contato" class="contato">
+            <div class="container">
+                <h2 class="section-title">Vamos Conversar!</h2>
+                <p>Estou aberto a oportunidades, colaborações e trocas de conhecimento.</p>
+                
+                <div class="social-links">
+                    <!-- ALTERAR AQUI: Seus links de redes sociais -->
+                    <a href=https://github.com/GustavoSobrinho16 class="social-btn">GitHub</a>
+                    <a href="mailto:seuemail@exemplo.com" class="social-btn">E-mail</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <!-- ALTERAR AQUI: Ano e seu nome -->
+            <p>© 2024 [Seu Nome]. Todos os direitos reservados.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.875rem;">✨ Feito com 💜 por um desenvolvedor iniciante ✨</p>
+        </div>
+    </footer>
+
+</body></html>
